@@ -2,7 +2,7 @@ Nostra – E-commerce Fashion Store
 
 A premium and responsive fashion e-commerce website built using HTML5, Vanilla CSS, and JavaScript. This project focuses on clean UI design, theme customization, and smooth user interactions.
 
-## 🚀 [Live Demo](https://n-fashion-store.vercel.app/)
+## 🚀 [Live Demo](https://fennjoy100.github.io/Nostra-E-Commerce-Website/)
 
 ## 📌 Project Overview
 
