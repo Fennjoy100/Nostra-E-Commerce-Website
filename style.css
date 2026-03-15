@@ -884,10 +884,18 @@ input:focus {
 
     .new-arrival {
         display: flex;
-        justify-content: space-between;
+        flex-wrap: nowrap; /* Force one row */
+        justify-content: flex-start;
         gap: 10px;
         margin-top: 20px;
-        overflow-x: visible; /* Removing horizontal scroll */
+        overflow-x: auto; /* Allow scrolling if it doesn't fit */
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        padding-bottom: 15px;
+    }
+
+    .new-arrival::-webkit-scrollbar {
+        display: none;
     }
 
     .new-arrival-container {
@@ -897,13 +905,22 @@ input:focus {
     }
 
     .new-arrival button {
-        font-size: 8px !important;
-        padding: 4px 8px !important;
+        font-size: 7px !important;
+        padding: 3px 6px !important;
         left: 50%;
         transform: translateX(-50%);
         white-space: nowrap;
         margin-top: 0;
-        top: 60%; /* Positioned slightly lower for better visibility on small cards */
+        top: 65%;
+    }
+
+    .new-arrival-container .like-button {
+        font-size: 16px !important; /* Smaller heart for small cards */
+        top: auto;
+        bottom: 5px;
+        right: 5px;
+        padding: 5px;
+        margin: 0;
     }
 
     .product-card img,
@@ -1023,8 +1040,8 @@ input:focus {
     }
 
     .new-arrival-container .like-button {
-        bottom: auto;
-        top: 65px; /* On the 100px high image */
+        font-size: 16px !important;
+        top: 70px; /* Positioned on the 100px high image */
         right: 5px;
     }
 
