@@ -543,11 +543,18 @@ input:focus {
     position: absolute;
     bottom: 15px;
     right: 15px;
-    z-index: 5;
+    z-index: 10;
     cursor: pointer;
     transition: transform 0.3s ease, color 0.3s ease;
     font-size: 24px;
     color: var(--text-color);
+    padding: 10px; /* Increase tap area */
+    margin: -10px; /* Offset padding to keep icon in place */
+    touch-action: manipulation;
+}
+
+.product-card .like-button {
+    bottom: calc(15px + 4vw); /* Default for PC, adjust based on text height roughly */
 }
 
 .like-button:hover {
@@ -938,6 +945,10 @@ input:focus {
         margin-top: 30px;
     }
 
+    .servives-container-1 div:nth-child(2) {
+        display: none;
+    }
+
     .servives-container-1 h2 {
         font-size: 18px;
     }
@@ -997,6 +1008,30 @@ input:focus {
         padding: 3px 6px;
         top: 5px;
         left: 5px;
+    }
+
+    .like-button {
+        font-size: 28px; /* Slightly larger for easier tapping on mobile */
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .product-card .like-button {
+        bottom: auto;
+        top: 100px; /* Positioned on the image (which is 140px high) */
+        right: 10px;
+    }
+
+    .new-arrival-container .like-button {
+        bottom: auto;
+        top: 65px; /* On the 100px high image */
+        right: 5px;
+    }
+
+    .most-wanted-container .like-button {
+        bottom: auto;
+        top: 100px; /* On the 140px high image */
+        right: 10px;
     }
 
     .most-wanted-container p {

@@ -81,12 +81,12 @@ if (mostWantedContainer) {
 
 
 
-var likebuttons = document.querySelectorAll(".like-button")
-
-likebuttons.forEach((btn) => {
-    btn.addEventListener("click", function (e) {
+// Event Delegation for Like Buttons (to work on filtered/moved elements)
+document.addEventListener("click", function (e) {
+    const btn = e.target.closest(".like-button");
+    if (btn) {
         e.preventDefault();
-        e.stopPropagation(); // Prevent card clicks if any
+        e.stopPropagation();
         
         // Toggle the 'liked' class for color
         btn.classList.toggle("liked");
@@ -99,8 +99,8 @@ likebuttons.forEach((btn) => {
             btn.classList.remove("fa-solid");
             btn.classList.add("fa-regular");
         }
-    })
-})
+    }
+});
 
 window.addEventListener("scroll", function () {
     var elements = this.document.querySelectorAll(".initial-scroll-animate")
