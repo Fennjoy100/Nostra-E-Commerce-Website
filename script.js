@@ -85,14 +85,19 @@ var likebuttons = document.querySelectorAll(".like-button")
 
 likebuttons.forEach((btn) => {
     btn.addEventListener("click", function (e) {
-
-
-        if (e.target.src.indexOf("blackheart") > 0) {
-            console.log("jkjk");
-            e.target.src = "img/icons/redheart.png"
-        }
-        else {
-            e.target.src = "img/icons/blackheart.png"
+        e.preventDefault();
+        e.stopPropagation(); // Prevent card clicks if any
+        
+        // Toggle the 'liked' class for color
+        btn.classList.toggle("liked");
+        
+        // Toggle between regular and solid heart
+        if (btn.classList.contains("fa-regular")) {
+            btn.classList.remove("fa-regular");
+            btn.classList.add("fa-solid");
+        } else {
+            btn.classList.remove("fa-solid");
+            btn.classList.add("fa-regular");
         }
     })
 })
